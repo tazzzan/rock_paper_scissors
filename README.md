@@ -26,7 +26,7 @@ Web: GameServiceImpl.class
 
 
 
-** START DES SPIELS **
+**START DES SPIELS**
 
 -> download the JAR file:
 
