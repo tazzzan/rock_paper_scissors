@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <div id="items" ng-repeat="item in items" data-ng-click="play(item)">
+        <h3> {{item.name}} </h3>
+    </div>
+
+
+    <div id="result" data-ng-show="played">
+        <h3> PC played : {{itemPCName}} </h3>
+        <h1> {{resultText}} </h1>
+    </div>
+</html>

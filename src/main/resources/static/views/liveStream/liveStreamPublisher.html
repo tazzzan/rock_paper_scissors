@@ -1,0 +1,14 @@
+<!-- ui_search -->
+<div id="search-container">
+    <input class="inputBoxSearch" type="text" ng-model="query"/>
+    <button type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-search"></span> SEARCH
+    </button>
+</div>
+
+
+<!-- ui_topics  -->
+<div data-ng-repeat="topic in topics | filter:query">
+	<!-- ui_topic -->
+    <div data-ng-include="'overview/topicPublisher'"> </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="topic">
+        <button id="buttonDeleteTopic" data-ng-click="deleteTopic(topic.idInLiveStream)"> Delete this topic </button>
+
+        <div  id="topicAreaTitle" >
+            <edit-in-place value="topic.name" object="topic"></edit-in-place>
+
+        </div>
+
+
+        <div id="topicAreaBody">
+
+            <div id="topicAreaLeft">
+
+                <div id="topicOwnerBox">
+                    <edit-in-place id="topicOwner" class="topicsElements" value="topic.owner"></edit-in-place>
+                </div>
+
+                <div id="topicDescriptionBox">
+                    <edit-in-place id="topicDescription" class="topicsElements" value="topic.description">
+
+                    </edit-in-place>
+                </div>
+
+            </div>
+
+            <div id="topicAreaRight">
+
+                <div id="topicVoteResultsBox">
+                    <ul id="topicVoteResults" class="topicsElements">
+                        <li data-ng-repeat="a in topic.vts"> {{ a }}</li>
+                    </ul>
+                </div>
+
+
+
+                <div id="topicVoteOptionsBox">
+
+                    <div class="voteOption">
+
+
+                        <div
+                                data-ng-repeat="b in topic.voteOptions" voteoption='b'>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+</div>
