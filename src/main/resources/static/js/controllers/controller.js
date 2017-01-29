@@ -50,51 +50,6 @@ App.controller('simpleController', function ($rootScope, $http, $scope) {
 
 
 
-
-	$rootScope.fetchTopics = function(){
-		$http.get('topic/topicslist.json').success(function(topics){
-			var newTopics = [];
-			
-			angular.forEach(topics, function(topic){
-				newTopic = new Topic(topic);
-				newTopics.push(newTopic);
-
-				$scope.countVotes(newTopic.id);
-			});
-			
-			$rootScope.topics = newTopics;
-		});
-	}
-
-	$scope.addTopic = function(topic){
-	    http.post('topic/add', topic).success(function(){
-	        alert("topic :'"+ topic.name +"' added");
-        })
-    }
-
-	$scope.editTopic = function(topic){
-		$http.post('topic/edit', topic).success(function(){
-			$scope.fetchTopics();
-		})
-	}
-
-	$scope.addVote = function(vote){
-	    $http.post('vote/add', vote).success(function(){
-	        $scope.countVotes(vote.referenceId);
-        })
-    }
-
-    $scope.countVotes = function(topicId){
-	    $http.get('vote/count/'+topicId).success(function(countVotes){
-	        $scope.getTopic(topicId).countVotes = countVotes;
-	    })
-    }
-
-
-
-
-
-
     /**
      *  Execution on reload
      */
